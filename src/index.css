@@ -14,8 +14,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 213 94% 68%;
+    --primary: 214 84% 56%;
     --primary-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --warning: 43 96% 56%;
+    --error: 0 84% 60%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -35,7 +39,7 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 220 14% 96%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
 
@@ -98,5 +102,24 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .metric-card {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .data-table {
+    @apply divide-y divide-gray-100;
+  }
+
+  .data-table tr {
+    @apply hover:bg-gray-50/50 transition-colors duration-150;
   }
 }
